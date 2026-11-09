@@ -1,0 +1,23 @@
+{
+  "name": "Calificador",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [8081],
+  "portsAttributes": {
+    "8081": {
+      "label": "App (npm start)"
+    }
+  },
+  "postCreateCommand": "npm install && npx playwright install --with-deps chromium",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# datos reales de estudiantes: nunca versionar
+fixtures/
+*.xlsx
+*.ods
+*.csv

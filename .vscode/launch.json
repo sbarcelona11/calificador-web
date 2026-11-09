@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug tests (core.test.js)",
+      "program": "${workspaceFolder}/test/core.test.js",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug e2e (test/e2e.js)",
+      "program": "${workspaceFolder}/test/e2e.js",
+      // Completá con rutas reales de archivos de prueba antes de correr.
+      "env": {
+        "MOODLE": "",
+        "PLANILLA": ""
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Abrir app (Chrome)",
+      // Requiere el servidor corriendo: tarea «start (servir app)» (npm start).
+      "url": "http://localhost:8081",
+      "webRoot": "${workspaceFolder}/dist"
+    }
+  ]
+}

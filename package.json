@@ -1,0 +1,24 @@
+{
+  "name": "calificador",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Armador de calificaciones: Moodle -> escala 0-100 -> planilla del calificador -> scripts de carga manual",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && node serve.js",
+    "dev": "node dev.js",
+    "test": "node test/core.test.js",
+    "test:e2e": "npm run build && node test/e2e.js",
+    "lint": "eslint src test build.js serve.js dev.js",
+    "format": "prettier --write src test build.js serve.js dev.js"
+  },
+  "dependencies": {
+    "jszip": "3.10.1",
+    "xlsx": "0.18.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "playwright": "^1.48.0",
+    "prettier": "^3.3.3"
+  }
+}
