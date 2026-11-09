@@ -1,0 +1,8 @@
+# Deploy a Render con Docker ("Blueprint"): en Render -> New -> Blueprint apuntando a este repo.
+# La app escucha en $PORT (Render lo inyecta); nginx se configura vía nginx/default.conf.template.
+services:
+  - type: web
+    name: calificador
+    runtime: docker
+    plan: free
+    healthCheckPath: /

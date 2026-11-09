@@ -1,0 +1,18 @@
+# Config de nginx para servir dist/index.html.
+# ${PORT} lo reemplaza el entrypoint de la imagen oficial nginx (envsubst)
+# usando el valor de la variable PORT (por defecto 80; en Render lo inyecta la plataforma).
+server {
+    listen       0.0.0.0:${PORT};
+    server_name  _;
+
+    root   /usr/share/nginx/html;
+    index  index.html;
+
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options DENY always;
+    add_header Referrer-Policy no-referrer always;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
